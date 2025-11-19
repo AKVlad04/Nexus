@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="explore.css">
     <title>Nexus NFT Marketplace - Digital Art & Collectibles</title>
 </head>
 
@@ -30,26 +30,19 @@
 
     </header>
 
-    <div class = "main_page">
+    <div class = "explore_page">
 
-        <div class="bg">
-            <div class="circle center top"></div>
-            <div class="circle center bottom"></div>
-            <div class="semi top-left"></div>
-            <div class="semi bottom-right"></div>
+
+
+        <div class="explore_page_text">
+            <h1 class="explore_mare">Explore NFTs</h1>
+            <span class="explore_mic">Discover unique digital art from creators around the world</span>
         </div>
 
 
-        <div class="first_row">
-            <h1 class="text_mare">Discover, Collect &</h1>
-            <span class="text_nft">Trade NFTs</span>
-        </div>
+        <div class = "search_explore">
 
-        <h1 class = "text_mediu">Enter the future of digital art. Explore unique collections from top creators.</h1>
-
-        <div class = "search">
-
-            <input type="text" id="search_bar" name="search_bar" placeholder="Search NFTs, collections, creators..." /> 
+            <input type="text" id="search_bar_explore" name="search_bar_explore" placeholder="Search NFTs, collections, creators..." /> 
 
             <a href = "#" id="filterButton" class = "filter_button">
                 <img src="img/filters.png" class="image_filter">
@@ -69,7 +62,6 @@
                 </select>
             </div>
 
-            <!-- COLOANA 2: PRICE RANGE -->
             <div class="filter-col">
                 <h4>Price Range</h4>
                 <select id="priceRangeFilter">
@@ -81,7 +73,6 @@
                 </select>
             </div>
 
-            <!-- COLOANA 3: SORT BY -->
             <div class="filter-col">
                 <h4>Sort By</h4>
                 <select id="sortBy">
@@ -95,33 +86,6 @@
         </div>
 
 
-        <div class = "main_cards">
-            <div class = "cards">
-                <img src="img/light.png" class="image_cards">
-                <span class="card_big">Lightning Fast</span>
-                <span class="card_small">Experience instant transactions and seamless trading</span>
-            </div>
-            <div class = "cards">
-                <img src="img/shield.png" class="image_cards">
-                <span class="card_big">Secure</span>
-                <span class="card_small">Your assets are protected with cutting-edge security</span>
-            </div>
-            <div class = "cards">
-                <img src="img/growth.png" class="image_cards">
-                <span class="card_big">Best Prices</span>
-                <span class="card_small">Competitive pricing with zero hidden fees</span>
-            </div>
-            <div class = "cards">
-                <img src="img/group.png" class="image_cards">
-                <span class="card_big">Community</span>
-                <span class="card_small">Join thousands of creators and collectors</span>
-            </div>
-        </div>
-
-        <div class = "featured">
-            <span class="featured_text">Featured NFTs</span>
-            <a href = "explore.html" class="view_all">View All -></a>
-        </div>
 
 <div class="nfts" id="nftsContainer">
 </div>
