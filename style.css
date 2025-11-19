@@ -1,207 +1,561 @@
+/* -------------------------------------- */
+/* 1. RESET ȘI BAZE */
+/* -------------------------------------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	font-family: Arial, sans-serif;
-  background-color: #0a0a0f;
-  color: #fff;
-  overflow-x: hidden;
+    font-family: Manrope, sans-serif;
+    background-color: #0a0a0f;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-.top_bar{
-	position: fixed;
- 	top: 0;
- 	left: 0;
-  right: 0;
-  height: 80px;
-  gap: 15px;
- 	display: flex;
- 	align-items: center;
- 	justify-content: space-evenly;
- 	padding: 0 30px;
- 	z-index: 1000;
- 	box-shadow: 0 0.1px 1px #35d8f6;
+.main_page {
+    /* Mărit margin-top pentru a lăsa loc noului fundal mai mare și barei de sus */
+    margin: 150px 0 0 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logo{
-	text-decoration: none;
-	color: inherit;
-	font-size: 25px;
-  display: flex;
-  align-items: center;
- 	justify-content: center;
- 	gap: 10px;
- 	user-select: none;
- 	cursor: pointer;
+/* -------------------------------------- */
+/* 2. HEADER ȘI NAVIGAȚIE */
+/* -------------------------------------- */
+.top_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 30px;
+    z-index: 1000;
+    background-color: #0a0a0f;
+    box-shadow: 0 0.1px 1px #35d8f6;
+}
+
+.logo {
+    text-decoration: none;
+    color: inherit;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.nexus_logo {
+    position: relative;
+    background: linear-gradient(135deg, #00d9ff, #8b5cf6);
+    color: white;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
 }
 
 .logo:hover .nexus_logo {
-  	box-shadow:
-  	0 0 15px rgba(0, 217, 255, 0.7),
-  	0 0 30px rgba(139, 92, 246, 0.7);
-}
-
-.connect_wallet{
-	text-decoration: none;
-	color: inherit;
-	font-size: 20px;
-	border-color: 35d8f6 ;
-	transition: box-shadow 0.6s ease, transform 0.6s ease;
-}
-
-.connect_wallet_text {
-  border: none;
-  box-shadow: 0 0 0 0.6px #35d8f6;
-  border-radius: 6px;
-  padding: 8px 25px;
- 	display: inline-block;
-}
-
-.connect_wallet:hover {
-  box-shadow:
-  0 0 15px rgba(0, 217, 255, 0.7);
-}
-
-.nexus_logo{
- 	position: relative;
-  background: linear-gradient(135deg, #00d9ff, #8b5cf6);
-  color: white;
- 	width: 40px;
- 	height: 40px;
- 	font-size: 20px;
- 	font-weight: bold;
- 	border-radius: 6px;
- 	display: flex;
- 	align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: box-shadow 0.5s ease, transform 0.5s ease;
-
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.7), 0 0 30px rgba(139, 92, 246, 0.7);
 }
 
 .home_button, .explore_button, .create_button, .profile_button {
-	text-decoration: none;
+    text-decoration: none;
     padding: 10px 25px;
     color: #e5e7eb;
     font-size: 18px;
 }
 
 .home_button:hover, .explore_button:hover, .create_button:hover, .profile_button:hover {
-
     color: #35d8f6;
 }
 
-.text_mare{
-	font-size: 44px;
-	color: white;
-	margin-bottom: 30px;
+.connect_wallet {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+    background-color: rgb(26 26 36);
+    transition: box-shadow 0.6s ease, transform 0.6s ease;
 }
 
-.text_mediu{
-	font-size: 20px;
-	color: #e5e7eb;
+.connect_wallet_text {
+    border: none;
+    box-shadow: 0 0 0 0.6px #35d8f6;
+    border-radius: 6px;
+    padding: 8px 25px;
+    display: inline-block;
 }
 
-.text_nft{
-	font-size: 44px;
-	background: linear-gradient(90deg, #00d9ff, #8b5cf6);
-  	-webkit-background-clip: text;
-  	-webkit-text-fill-color: transparent;
-  	font-weight: bold;
+.connect_wallet:hover {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.7);
 }
 
-.first_row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.main_page{
-	margin: 0;
-	display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- 	min-height: 100vh; 
-}
-
-.search {
-  margin-top: 50px;
-  display: flex;
-  gap: 10px;
-}
-
-#search_bar {
-  width: 50%;
-  max-width: 600px;
-  min-width: 400px;
-  padding: 15px;
-  font-size: 18px;
-  color: #fff;
-  background-color: #0a0a0f;
-  border: none;
-  box-shadow: 0 0 0 0.6px #35d8f6;
-  border-radius: 8px;
-  outline: none;
-  flex-shrink: 0;
-  height: 50px;
-}
-
-.filter_button {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: #0a0a0f;
-  border: none;
-  box-shadow: 0 0 0 0.6px #35d8f6;
-  border-radius: 8px;
-  padding: 0 10px;
-  height: 50px;
-}
-
-.filter_button button {
-  background: none;
-  border: none;
-  color: #35d8f6;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 0;
-}
-
-.image_filter {
-  width: 30px;
-  height: 35px;
-  border-radius: 5px;
-}
-
-.first_row,
-.text_mediu,
-.search {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
+/* -------------------------------------- */
+/* 3. HERO ȘI TEXT */
+/* -------------------------------------- */
 
 .first_row {
-  animation-delay: 0.2s;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.text_mare {
+    font-size: 44px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.text_nft {
+    font-size: 44px;
+    background: linear-gradient(90deg, #00d9ff, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
 .text_mediu {
-  animation-delay: 0.5s;
+    font-size: 20px;
+    font-weight: 50;
+    color: #e5e7eb;
 }
 
+/* -------------------------------------- */
+/* 4. BACKGROUND ȘI ANIMAȚII */
+/* -------------------------------------- */
+.bg {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 500px; 
+    overflow: hidden;
+    z-index: -1;
+    transform: translateY(-180px); /* Ascuns jumătate */
+    transition: transform 0.4s ease-in-out;
+}
+
+.bg.active {
+    transform: translateY(0); /* Dezvăluit total */
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(150px);
+}
+
+.circle.center.top {
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #00d9ff, transparent);
+}
+
+.circle.center.bottom {
+    top: 60%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #8b5cf6, transparent);
+}
+
+.semi {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    filter: blur(200px);
+    background: radial-gradient(circle, #00d9ff, #8b5cf6);
+}
+
+.semi.top-left {
+    top: -150px;
+    left: -150px;
+}
+
+.semi.bottom-right {
+    bottom: -150px;
+    right: -150px;
+}
+
+/* ANIMAȚII TEXT */
+.first_row, .text_mediu, .search {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fadeDown 0.8s ease forwards;
+}
+
+.first_row { animation-delay: 0.1s; }
+.text_mediu { animation-delay: 0.2s; }
+.search { animation-delay: 0.3s; }
+
+@keyframes fadeDown {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------- */
+/* 5. SEARCH ȘI FILTRE (ALINIERE FINALĂ) */
+/* -------------------------------------- */
+/* Lățimea containerului principal de căutare */
 .search {
-  animation-delay: 0.8s;
+    margin-top: 50px;
+    display: flex;
+    gap: 10px;
+    width: 900px; /* Lățime fixă necesară pentru aliniere perfectă */
+    max-width: 90%; 
 }
 
-@keyframes fadeUp {
-  to {
+/* Input-ul de căutare (700px) */
+#search_bar {
+    width: 700px; 
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgb(26 26 36);
+    border: none;
+    box-shadow: 0 0 0 0.6px #35d8f6;
+    border-radius: 8px;
+    outline: none;
+    flex-shrink: 0;
+    height: 50px;
+}
+
+/* Butonul de filtre (190px) */
+.filter_button {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgb(26 26 36);
+    border: none;
+    box-shadow: 0 0 0 0.6px #35d8f6;
+    border-radius: 8px;
+    padding: 0 10px;
+    height: 50px;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    width: 190px; /* Lățime fixă: 700 + 10 (gap) + 190 = 900px */
+    justify-content: center;
+}
+
+.filter_button button {
+    background: none;
+    border: none;
+    color: #35d8f6;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Imaginea din butonul de filtru (redimensionată și centrată) */
+.image_filter {
+    width: 20px; 
+    height: 20px; 
+    /* Adăugat margin-top și margin-bottom pentru a compensa font-ul butonului */
+    margin-top: 2px;
+    margin-bottom: 2px;
+    object-fit: contain;
+    /* Am eliminat border-radius: 5px; deoarece este o pictogramă */
+}
+
+/* BOX FILTRE STATICE */
+.filter_box {
+    margin-top: 20px;
+    background-color: rgb(26 26 36);
+    border: 1px solid #35d8f6;
+    border-radius: 8px;
+    padding: 20px;
+    width: 900px; /* Lățime fixă - ALINIAT CU SEARCH */
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 200;
+    text-align: left;
+    
+    /* LAYOUT GRID PENTRU 3 COLOANE EGALE */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease-out, max-height 0.6s ease-out; 
+}
+
+.filter_box.show {
     opacity: 1;
-    transform: translateY(0);
-  }
+    max-height: 300px;
+}
+
+/* Coloana de filtre */
+.filter-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 0; 
+}
+
+/* Titlul h4 din fiecare secțiune */
+.filter-col h4 {
+    color: #e5e7eb;
+    margin-bottom: 8px;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* CAMPURI SELECT (Dropdowns) - Mărite la 50px pentru aliniere */
+.filter_box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #35d8f6;
+    background-color: #1a1a24;
+    color: #fff;
+    font-size: 14px;
+    /* Înălțime fixă pentru alinierea cu bara de căutare */
+    height: 50px; 
+    cursor: pointer;
+}
+
+/* Eliminarea claselor vechi nefolosite */
+.aligned-input, .price-range-group, .price-input-wrapper, 
+.filter-section label, .button-group, .apply-button, .reset-button,
+.filter-section, .category-sort-group, .sort-section {
+    /* Aceste clase nu mai sunt necesare */
+}
+/* -------------------------------------- */
+/* 6. CARDS ȘI NFT-uri */
+/* -------------------------------------- */
+.main_cards {
+    display: flex;
+    margin: 50px;
+    gap: 25px;
+}
+
+.cards {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 302px;
+    height: 184px;
+    background-color: rgb(26 26 36);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 0 0.6px #35d8f6;
+    transition: transform 0.5s ease;
+}
+
+.cards:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px 5px #35d8f6;
+}
+
+/* ANIMAȚII CARDS */
+.cards { animation: fadeRight 0.6s ease forwards, hop 0.4s ease forwards; animation-delay: 0.1s, 0.7s; }
+.cards:nth-child(1) { animation-delay: 0.1s, 0.7s; }
+.cards:nth-child(2) { animation-delay: 0.25s, 0.9s; }
+.cards:nth-child(3) { animation-delay: 0.4s, 1.1s; }
+.cards:nth-child(4) { animation-delay: 0.55s, 1.3s; }
+@keyframes fadeRight { to { opacity: 1; transform: translateX(0); } }
+@keyframes hop { 0% { transform: translateY(0); } 100% { transform: translateY(-60px); } }
+
+
+.card_big {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.card_small {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.image_cards {
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+.featured {
+    display: flex;
+    align-items: center;
+    gap: 990px;
+}
+
+.featured_text {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.view_all {
+    text-decoration: none;
+    font-size: 24px;
+    color: #35d8f6;
+    margin-bottom: 30px;
+}
+
+.nfts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.nft {
+    height: 465px;
+    width: 310px;
+    background-color: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 0.3px #35d8f6;
+    transition: transform 0.3s;
+}
+
+.nft:hover {
+    transform: translateY(-5px);
+}
+
+.nft_footer {
+    padding: 22px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(26 26 36);
+}
+
+.nft_name_cat {
+    display: flex;
+    flex-direction: column;
+}
+
+.nft_name {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nft:hover .nft_name {
+    color: #35d8f6;
+}
+
+.nft_category {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgb(156 163 175);
+}
+
+.nft_price {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 20px;
+    color: #00d9ff;
+}
+
+.nft_textprice {
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgb(156 163 175);
+    margin-bottom: 5px;
+}
+
+.nft_image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* -------------------------------------- */
+/* 7. POPUP NFT */
+/* -------------------------------------- */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-content {
+    background-color: rgb(26 26 36);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 15px #35d8f6;
+    transform: translateY(-20px);
+    animation: popupFade 0.3s ease forwards;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #35d8f6;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.popup .close:hover {
+    color: #00d9ff;
+    transform: scale(0.8);
+}
+
+.popup-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+@keyframes popupFade {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
