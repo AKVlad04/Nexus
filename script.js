@@ -75,9 +75,9 @@ function renderNFTs(nftsToRender) {
     
     div.addEventListener('click', () => {
       popupTitle.textContent = nft.name;
-      popupCategory.textContent = "Category: " + nft.category;
+      popupCategory.textContent = nft.category;
       popupDescription.textContent = nft.description;
-      popupPrice.textContent = "Price: " + nft.price + " ETH";
+      popupPrice.textContent = "Current Price: " + nft.price + " ETH";
       popupImg.src = nft.image_url;
       popup.classList.add('show');
     });

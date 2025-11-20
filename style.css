@@ -200,16 +200,19 @@ body {
 
 .popup-content {
     background-color: rgb(26 26 36);
-    padding: 30px;
     border-radius: 10px;
-    width: 400px;
+    width: 1100px;
+    height: 800px;
     max-width: 90%;
+    max-height: 90%;
     text-align: center;
     color: white;
     position: relative;
     box-shadow: 0 0 15px #35d8f6;
     transform: translateY(-20px);
     animation: popupFade 0.3s ease forwards;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .popup .close {
@@ -229,12 +232,52 @@ body {
 }
 
 .popup-content img {
-    width: 150px;
-    height: 150px;
+    width: 520px;
+    height: 520px;
     object-fit: cover;
     border-radius: 10px;
-    margin: 15px 0;
+    margin: 15px 20px 0 30px;
+    border-width: 0.3px;
+    border-style: solid;
+    border-color: #35d8f6;
 }
+
+.popup_nfttext{ 
+    font-size: 24px;
+    margin: 40px 20px 20px 30px;
+}
+
+.popup_nftdetails {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 0;
+    border-bottom-width: 0.3px;
+    border-bottom-style: solid;
+    border-bottom-color: #35d8f6;
+}
+
+.pop_mare{
+    gap: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+.pop_detalii{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#popupCategory{
+    font-size: 16px;
+    color: #35d8f6;
+}
+
+#popupTitle{
+    font-size: 34px;
+    margin: 10px 0;
+}
+
 
 @keyframes popupFade {
     from { opacity: 0; transform: translateY(-20px); }
