@@ -125,7 +125,7 @@ body {
 }
 
 .nft_footer {
-    padding: 22px 15px;
+    padding: 35px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,16 +199,17 @@ body {
 }
 
 .popup-content {
-    background-color: rgb(26 26 36);
+    background-color: #13131af2;
     border-radius: 10px;
     width: 1100px;
-    height: 800px;
+    height: 1000px;
     max-width: 90%;
-    max-height: 90%;
-    text-align: center;
+    max-height: 100%;
     color: white;
     position: relative;
-    box-shadow: 0 0 15px #35d8f6;
+    border-width: 0.3px;
+    border-style: solid;
+    border-color: #35d8f6;
     transform: translateY(-20px);
     animation: popupFade 0.3s ease forwards;
     overflow-y: auto;
@@ -275,10 +276,65 @@ body {
 
 #popupTitle{
     font-size: 34px;
-    margin: 10px 0;
+    margin: 10px 0 15px 0;
+}
+.views_pop{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    color: rgb(156, 163, 175);
+    margin-bottom: 15px;
 }
 
+.icon_eye, .icon_heart {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+}
 
+#popupDescription {
+    font-size: 16px;
+    margin: 0 30px 20px 0;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+.currentPrice {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    width: 443px;
+    height: 150px;
+    margin: 20px 0 0 0;
+    border-radius: 10px;
+    border-width: 0.3px;
+    border-style: solid;
+    border-color: #35d8f6;
+    background-color: rgb(26 26 36);
+}
+
+#current_price{
+    font-size: 16px;
+    color: #9ca3af;
+}
+
+#popupPrice {
+    font-size: 32px;
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+#aprox {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(156, 163, 175);
+}
 @keyframes popupFade {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }

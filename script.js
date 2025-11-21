@@ -1,16 +1,16 @@
 const nftsFromDB = [
-  {creator_id: 1, name: 'Galactic Phoenix', description: 'A fiery bird rising from cosmic ashes.', price: 2.5, category: 'Digital Art', image_url: 'img/galactic.jpg'},
-  {creator_id: 4, name: 'Neon Samurai', description: 'Cyberpunk warrior with glowing katana.', price: 3.8, category: 'Collectibles', image_url: 'img/neon.jpg'},
-  {creator_id: 18, name: 'Echoes of Eternity', description: 'Ambient soundscape to soothe your mind.', price: 1.9, category: 'Music', image_url: 'img/echoes.jpg'},
-  {creator_id: 1, name: 'Shadow Racer', description: 'Sleek hovercar ready for futuristic races.', price: 4.2, category: 'Gaming', image_url: 'img/shadow.jpg'},
-  {creator_id: 19, name: 'Pixel Gladiator', description: 'Retro-style pixel hero in battle stance.', price: 5.5, category: 'Collectibles', image_url: 'img/pixel.jpg'},
-  {creator_id: 9, name: 'Sonic Pulse', description: 'High-energy electronic beat for your mix.', price: 2.1, category: 'Music', image_url: 'img/sonic.jpg'},
-  {creator_id: 4, name: 'Bassline Surge', description: 'Deep bass track to energize any party.', price: 3.3, category: 'Music', image_url: 'img/bassline.jpg'},
-  {creator_id: 18, name: 'Virtual Skater', description: 'Agile avatar for the urban metaverse.', price: 2.8, category: 'Gaming', image_url: 'img/virtual.jpg'},
-  {creator_id: 47, name: 'Crystal Caverns', description: 'Gem-filled caves sparkling with magic.', price: 1.5, category: 'Digital Art', image_url: 'img/crystal.jpg'},
-  {creator_id: 45, name: 'Digital Nomad', description: 'Explorer avatar roaming virtual worlds.', price: 2.7, category: 'Collectibles', image_url: 'img/digital.jpg'},
-  {creator_id: 62, name: 'Oceanic Dreamscape', description: 'Peaceful underwater digital painting.', price: 3.4, category: 'Digital Art', image_url: 'img/oceanic.jpg'},
-  {creator_id: 62, name: 'Retro Synthwave', description: 'Nostalgic 80’s synth music track.', price: 1.1, category: 'Music', image_url: 'img/retro.jpg'}
+{"creator_id": 1, "name": "Cyber Dreams #001", "description": "This unique digital artwork presents a captivating vision of a futuristic cyberpunk landscape. Every detail is meticulously handcrafted by talented artists, and the piece is fully secured on the blockchain, ensuring an unalterable proof of authenticity and complete digital ownership.", "price": 2.5, "category": "Digital Art", "image_url": "img/galactic.jpg"},
+{"creator_id": 4, "name": "Giga Cats #001", "description": "A futuristic feline collectible from the first Giga Cats series, designed with a high level of visual complexity. This piece is highly valuable for collectors, representing a high-resolution digital avatar ready for use across various emerging metaverse platforms.", "price": 1.2, "category": "Collectibles", "image_url": "img/neon.jpg"},
+{"creator_id": 18, "name": "Genesis Token #008", "description": "This is one of the original Genesis tokens, granting its holder guaranteed exclusive access to future projects, private events, and high-value airdrops. The token represents a core membership key in our ecosystem, which is essential for long-term community involvement and benefits.", "price": 5.0, "category": "Utility", "image_url": "img/echoes.jpg"},
+{"creator_id": 1, "name": "Cyber Dreams #002", "description": "Another mesmerizing piece from the Cyber Dreams collection, exploring the theme of neon cities and advanced technology. The composition focuses on a sense of digital reverie, created using an electric color palette and impressive architectural detailing.", "price": 2.8, "category": "Digital Art", "image_url": "img/shadow.jpg"},
+{"creator_id": 19, "name": "Abstract Echo #1", "description": "A dynamic generative art piece, rendered in 3D, that examines the complex interaction between light, motion, and texture. The artwork utilizes a sophisticated algorithm to create an abstract visual echo, making it perfect for high-performance digital displays.", "price": 10.5, "category": "3D Render", "image_url": "img/pixel.jpg"},
+{"creator_id": 9, "name": "Soundscape Clip #10", "description": "A unique visual representation of a rare and unpublished audio clip. This NFT is a complete audio-visual piece, combining sound art with a dynamic visualization of the waveforms. It offers both aesthetic and historical value for blockchain music collectors.", "price": 0.8, "category": "Music/Audio", "image_url": "img/sonic.jpg"},
+{"creator_id": 4, "name": "Giga Cats #002", "description": "The second feline collectible from the Giga Cats series, distinguished by a particularly rare color attribute that sets it apart from common pieces. It is a high-value digital asset for the collecting community, ideal for use as a personal avatar.", "price": 1.5, "category": "Collectibles", "image_url": "img/bassline.jpg"},
+{"creator_id": 18, "name": "Genesis Token #009", "description": "The third Genesis token issued, which grants voting power and governance rights to the holder within the Decentralized Autonomous Organization (DAO). The token ensures continuous access to exclusive utilities and major decision-making within our digital ecosystem.", "price": 3.2, "category": "Utility", "image_url": "img/virtual.jpg"},
+{"creator_id": 47, "name": "Rogue Vest #01", "description": "A wearable digital clothing item (wearable NFT) in the form of a stylized vest, compatible with a wide range of metaverse platforms. It combines high-fashion aesthetics with the practical utility of a distinctive digital accessory.", "price": 4.0, "category": "Fashion/Wearables", "image_url": "img/crystal.jpg"},
+{"creator_id": 45, "name": "Deep Space View", "description": "A high-resolution digital painting that captures a spectacular cosmic scene, featuring a vibrant nebula in the foreground. This work evokes the mystery and vastness of the universe, making it an ideal centerpiece for any space-themed digital art collection.", "price": 3.0, "category": "Digital Art", "image_url": "img/digital.jpg"},
+{"creator_id": 62, "name": "Crypto-Key #A1", "description": "An extremely limited access key (Utility NFT) that permits entry to an exclusive platform or a premium digital service. This key is essential for unlocking advanced functionalities and is the first in a short series of emissions.", "price": 7.5, "category": "Utility/Access", "image_url": "img/oceanic.jpg"},
+{"creator_id": 62, "name": "Crypto-Key #A2", "description": "The second access key issued by the same creator, offering the exact same platform access privileges. Owning both keys may provide additional loyalty bonuses or discounts on future services offered by the ecosystem.", "price": 7.5, "category": "Utility/Access", "image_url": "img/retro.jpg"}
 ];
 
 const container = document.getElementById('nftsContainer');
@@ -67,7 +67,6 @@ function renderNFTs(nftsToRender) {
         <div class="nft_name_cat">
           <span class="nft_name">${nft.name}</span>
           <span class="nft_category">${nft.category}</span>
-          <span class="nft_textprice">Current Price</span>
           <span class="nft_price">${nft.price} ETH</span>
         </div>
       </div>
@@ -77,7 +76,7 @@ function renderNFTs(nftsToRender) {
       popupTitle.textContent = nft.name;
       popupCategory.textContent = nft.category;
       popupDescription.textContent = nft.description;
-      popupPrice.textContent = "Current Price: " + nft.price + " ETH";
+      popupPrice.textContent = nft.price + " ETH";
       popupImg.src = nft.image_url;
       popup.classList.add('show');
     });
