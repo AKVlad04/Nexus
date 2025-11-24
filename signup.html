@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="auth.css">
+    <title>Sign Up - Nexus</title>
+</head>
+<body>
+
+    <header class="top_bar">
+        <a href="index.html" class="logo">
+            <span class="nexus_logo">N</span>
+            <span class="nexus">Nexus</span>
+        </a>   
+        <div class="buttons_footer">
+            <a href="index.html" class="home_button">Home</a>
+            <a href="explore.html" class="explore_button">Explore</a>
+        </div>
+        <a href="login.html" class="connect_wallet">
+            <span class="connect_wallet_text">Login</span>
+        </a>
+    </header>
+
+    <div class="auth_page">
+        <div class="auth_container">
+            <h1 class="auth_title">Create Account</h1>
+            <span class="auth_subtitle">Join the future of digital art</span>
+
+            <div id="alertBox" class="alert"></div>
+
+            <form class="auth_form" action="signup.php" method="POST">
+                <div class="form_group">
+                    <label class="form_label">Username</label>
+                    <input type="text" name="username" class="form_input" required>
+                </div>
+
+                <div class="form_group">
+                    <label class="form_label">Email Address</label>
+                    <input type="email" name="email" class="form_input" required>
+                </div>
+
+                <div class="form_group">
+                    <label class="form_label">Password</label>
+                    <input type="password" name="password" class="form_input" required>
+                </div>
+
+                <div class="form_group">
+                    <label class="form_label">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form_input" required>
+                </div>
+
+                <button type="submit" class="auth_button">Sign Up</button>
+            </form>
+
+            <div class="auth_footer">
+                Already have an account? <a href="login.html" class="auth_link">Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const alertBox = document.getElementById('alertBox');
+        
+        if (urlParams.has('error')) {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-error';
+            const err = urlParams.get('error');
+
+            if(err === 'empty') alertBox.innerText = "All fields are required.";
+            else if(err === 'mismatch') alertBox.innerText = "Passwords do not match.";
+            else if(err === 'exists') alertBox.innerText = "Username or Email already exists.";
+            else if(err === 'db') alertBox.innerText = "Server error. Try again.";
+        }
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Manrope, sans-serif;
     background-color: #0a0a0f;
@@ -408,4 +409,7 @@ body {
     gap: 10px;
     padding: 10px 0;
     color: #e5e7eb;
+}
+.profile_button {
+    display: none;
 }

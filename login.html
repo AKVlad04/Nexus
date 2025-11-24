@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="auth.css">
+    <title>Login - Nexus</title>
+</head>
+<body>
+
+    <header class="top_bar">
+        <a href="index.html" class="logo">
+            <span class="nexus_logo">N</span>
+            <span class="nexus">Nexus</span>
+        </a>   
+        <div class="buttons_footer">
+            <a href="index.html" class="home_button">Home</a>
+            <a href="explore.html" class="explore_button">Explore</a>
+        </div>
+        <a href="signup.html" class="connect_wallet">
+            <span class="connect_wallet_text">Sign Up</span>
+        </a>
+    </header>
+
+    <div class="auth_page">
+        <div class="auth_container">
+            <h1 class="auth_title">Welcome Back</h1>
+            <span class="auth_subtitle">Login to manage your collection</span>
+
+            <div id="alertBox" class="alert"></div>
+
+            <form class="auth_form" action="login.php" method="POST">
+                <div class="form_group">
+                    <label class="form_label">Email Address</label>
+                    <input type="email" name="email" class="form_input" required>
+                </div>
+
+                <div class="form_group">
+                    <label class="form_label">Password</label>
+                    <input type="password" name="password" class="form_input" required>
+                </div>
+
+                <button type="submit" class="auth_button">Log In</button>
+            </form>
+
+            <div class="auth_footer">
+                Don't have an account? <a href="signup.html" class="auth_link">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const alertBox = document.getElementById('alertBox');
+
+        // Mesaj Succes (de la Sign Up)
+        if (urlParams.has('success')) {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-success';
+            if(urlParams.get('success') === 'registered') {
+                alertBox.innerText = "Account created successfully! Please login.";
+            }
+        }
+
+        // Mesaj Eroare (de la Login)
+        if (urlParams.has('error')) {
+            alertBox.style.display = 'block';
+            alertBox.className = 'alert alert-error';
+            const err = urlParams.get('error');
+            
+            if(err === 'empty') alertBox.innerText = "Please fill in all fields.";
+            else if(err === 'invalid') alertBox.innerText = "Invalid email or password.";
+            else if(err === 'inactive') alertBox.innerText = "Your account is inactive.";
+        }
+    </script>
+</body>
+</html>
